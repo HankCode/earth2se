@@ -14,10 +14,9 @@ import { FaDiscord } from 'react-icons/fa';
 import { Link as NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-    brand: {
-        fontSize: '2rem',
-        color: '#fff',
-        textDecoration: 'none',
+    logo: {
+        width: '75px',
+        height: '49px',
     },
     appbar: {
         background: 'rgba(0,0,0,0.3)',
@@ -25,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
     appbarWrapper: {
         width: '80%',
         margin: '0 auto',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             width: '90%',
         },
     },
     sIcon: {
         color: '#fff',
         fontSize: '1.2rem',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
     },
@@ -43,12 +42,15 @@ const useStyles = makeStyles((theme) => ({
     appbarTitle: {
         flexGrow: '1',
     },
-    link: {
-        textDecoration: 'none',
-    },
     socialLinks: {
         color: '#fff',
         fontSize: '1.2rem',
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'gray',
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
 }));
 
@@ -70,8 +72,12 @@ export default function Nav() {
             <AppBar className={classes.appbar} elevation={0}>
                 <Toolbar className={classes.appbarWrapper}>
                     <h1 className={classes.appbarTitle}>
-                        <Link href='/'>
-                            <span className={classes.brand}>Earth2.se</span>
+                        <Link href='/' className={classes.link}>
+                            <img
+                                src='../assets/logo_earth2transparant_exact.png'
+                                alt='Earth2.se logo'
+                                className={classes.logo}
+                            />
                         </Link>
                     </h1>
 
@@ -138,26 +144,26 @@ export default function Nav() {
                             onClose={handleClose}
                         >
                             <MenuItem onClick={handleClose}>
-                                <NavLink to='/'>
-                                    <span className={classes.link}>Hem</span>
+                                <NavLink to='/' className={classes.link}>
+                                    Hem
                                 </NavLink>
                             </MenuItem>
 
                             <MenuItem onClick={handleClose}>
-                                <NavLink to='/blog'>
-                                    <span className={classes.link}>Blog</span>
+                                <NavLink to='/blog' className={classes.link}>
+                                    Blog
                                 </NavLink>
                             </MenuItem>
 
                             <MenuItem onClick={handleClose}>
-                                <NavLink to='/contact'>
-                                    <span className={classes.link}>Kontakt</span>
+                                <NavLink to='/contact' className={classes.link}>
+                                    Kontakt
                                 </NavLink>
                             </MenuItem>
 
                             <MenuItem onClick={handleClose}>
-                                <NavLink to='/faq'>
-                                    <span className={classes.link}>Vanliga frågor</span>
+                                <NavLink to='/faq' className={classes.link}>
+                                    Vanliga frågor
                                 </NavLink>
                             </MenuItem>
                         </Menu>

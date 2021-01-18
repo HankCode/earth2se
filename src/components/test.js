@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,13 +12,18 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        minHeight: '100vh',
+        textAlign: 'center',
         display: 'flex',
+        flexDirection: 'column',
+        paddingTop: '125px',
         justifyContent: 'center',
         alignItems: 'center',
-        [theme.breakpoints.down('md')]: {
-            flexDirection: 'column',
-        },
+        fontFamily: 'Montserrat',
+    },
+    blogPostContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        magin: '0px',
     },
     card: {
         maxWidth: 550,
@@ -30,9 +35,13 @@ const useStyles = makeStyles((theme) => ({
         height: 300,
     },
     title: {
-        fontFamily: 'Montserrat',
-        fontSize: '2rem',
         color: '#fff',
+        fontSize: '3.2rem',
+        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '2.2rem',
+        },
+        margin: '0px',
     },
     bTitle: {
         fontFamily: 'Montserrat',
@@ -47,8 +56,7 @@ const useStyles = makeStyles((theme) => ({
     cardLink: {
         fontFamily: 'Montserrat',
         fontSize: '1rem',
-        fontWeight: 'bold',
-        color: '#ddd',
+        color: '#fff',
     },
 }));
 
@@ -75,44 +83,114 @@ export default function Blog() {
             dateFormatted: '2019-08-01',
             datePretty: 'August 1st, 2019',
         },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
+        {
+            title: 'My First Blog Post',
+            content:
+                '<p>Cupcake ipsum dolor sit amet. Topping cake jelly-o biscuit marshmallow. Lemon drops topping donut biscuit toffee caramels caramels danish. Gingerbread chocolate cake chocolate. Chocolate cake jelly cotton candy gummi bears candy. Chupa chups sesame snaps dessert carrot cake chocolate liquorice gingerbread. Sesame snaps chupa chups tootsie roll croissant ice cream biscuit. Cotton candy fruitcake candy canes. Cake oat cake chocolate cake tiramisu chupa chups. Toffee jelly gingerbread gummi bears cotton candy. Liquorice tiramisu marzipan jelly beans jelly cheesecake candy. Topping cupcake bear claw carrot cake cookie dessert marzipan caramels. Bear claw liquorice cotton candy toffee jelly donut tart tiramisu chocolate. Brownie tiramisu pie halvah.</p>',
+            coverImage: 'http://placekitten.com/700/400',
+            coverImageAlt: 'A random kitten from placekitten.com.',
+            slug: 'my-first-blog-post',
+            dateFormatted: '2019-08-01',
+            datePretty: 'August 1st, 2019',
+        },
     ];
 
     return (
         <>
             <div className={classes.root}>
-                {blogPost.map((blogPost) => (
-                    <Card key={blogPost.slug} className={classes.card}>
-                        <CardActionArea>
-                            <CardMedia
-                                className={classes.media}
-                                image={blogPost.coverImage}
-                                alt={blogPost.coverImageAlt}
-                                title='CoverImage'
-                            />
-                            <CardContent>
-                                <Typography
-                                    gutterBottom
-                                    variant='h5'
-                                    component='h1'
-                                    className={classes.bTitle}
-                                >
-                                    {blogPost.title} &mdash; {blogPost.datePretty}
-                                </Typography>
-                                {/* <Typography
+                <h1 className={classes.title}>Blogarkiv:</h1>
+                <div className={classes.blogPostContainer}>
+                    {blogPost.map((blogPost) => (
+                        <Card key={blogPost.slug} className={classes.card}>
+                            <CardActionArea>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={blogPost.coverImage}
+                                    alt={blogPost.coverImageAlt}
+                                    title='CoverImage'
+                                />
+                                <CardContent>
+                                    <Typography
+                                        gutterBottom
+                                        variant='h5'
+                                        component='h1'
+                                        className={classes.bTitle}
+                                    >
+                                        {blogPost.title} &mdash; {blogPost.datePretty}
+                                    </Typography>
+                                    {/* <Typography
                             component='p'
                             dangerouslySetInnerHTML={{
                                 __html: `${blogPost.content.substring(0, 200)}...`,
                             }}
                         /> */}
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button size='small' color='primary' className={classes.cardLink}>
-                                <Link to={`/blog/${blogPost.slug}`}>Continue reading...</Link>
-                            </Button>
-                        </CardActions>
-                    </Card>
-                ))}
+                                </CardContent>
+                            </CardActionArea>
+                            <CardActions>
+                                <Button size='small' color='primary' className={classes.cardLink}>
+                                    <Link
+                                        to={`/blog/${blogPost.slug}`}
+                                        className='link'
+                                        underline='hover'
+                                        color='inherit'
+                                    >
+                                        Continue reading...
+                                    </Link>
+                                </Button>
+                            </CardActions>
+                        </Card>
+                    ))}
+                </div>
             </div>
         </>
     );

@@ -39,8 +39,10 @@ const useStyles = makeStyles((theme) => ({
     },
     qWrap: {
         margin: '10px',
+        padding: '20px',
         background: 'rgba(0,0,0,0.2)',
-        border: '1px solid black rounded',
+        border: '1px solid grey',
+        borderRadius: '4px',
     },
     link: {
         textDecoration: 'nonae',

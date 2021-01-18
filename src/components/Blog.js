@@ -5,28 +5,27 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
         fontFamily: 'Montserrat',
     },
-    colorText: {
-        color: '#fff',
-        textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
-    },
+    blogpostContainer: {
+        display: 'flex',
+    }
     container: {
         textAlign: 'center',
     },
     title: {
         color: '#fff',
-        fontSize: '4rem',
+        fontSize: '3.2rem',
         textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '2.2rem',
+        },
     },
     bTitle: {
         color: '#fff',
         fontSize: '1.2rem',
     },
-    card: {
+    cardWrap: {
         border: '1px solid grey',
         borderRadius: '4px',
         marginTop: '24px',
@@ -62,31 +61,27 @@ export default function Blog() {
 
     const classes = useStyles();
     return (
-        <div>
-            <div className={classes.root} id='header'>
-                <div className={classes.container}>
-                    <h1 className={classes.title}>Earth2.se blog</h1>
-                    <div>
-                        {blogPosts.map((blogPost) => (
-                            <section key={blogPost.slug} className={classes.card}>
-                                <img src={blogPost.coverImage} alt={blogPost.coverImageAlt} />
-                                <div className='card-content'>
-                                    <h2>
-                                        <span className={classes.bTitle}>
-                                            {blogPost.title} &mdash; {blogPost.datePretty}
-                                        </span>
-                                    </h2>
-                                    <p
-                                        dangerouslySetInnerHTML={{
-                                            __html: `${blogPost.content.substring(0, 200)}...`,
-                                        }}
-                                    ></p>
-                                    <Link to={`/${blogPost.slug}`}>Continue reading...</Link>
-                                </div>
-                            </section>
-                        ))}
-                    </div>
-                </div>
+        <div className={classes.root}>
+            <div className={classes.container}>
+                <h1 className={classes.title}>Blog archive</h1>
+                {blogPosts.map((blogPost) => (
+                    <section key={blogPost.slug} className={classes.cardWrap}>
+                        <img src={blogPost.coverImage} alt={blogPost.coverImageAlt} />
+                        <div className='card-content'>
+                            <h2>
+                                <span className={classes.bTitle}>
+                                    {blogPost.title} &mdash; {blogPost.datePretty}
+                                </span>
+                            </h2>
+                            <p
+                                dangerouslySetInnerHTML={{
+                                    __html: `${blogPost.content.substring(0, 200)}...`,
+                                }}
+                            ></p>
+                            <Link to={`/${blogPost.slug}`}>Continue reading...</Link>
+                        </div>
+                    </section>
+                ))}
             </div>
         </div>
     );

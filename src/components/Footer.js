@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.3rem',
         textAlign: 'center',
         justifyContent: 'center',
+        color: '#fff',
     },
 }));
 

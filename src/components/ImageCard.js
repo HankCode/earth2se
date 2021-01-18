@@ -36,6 +36,9 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         color: '#ddd',
     },
+    link: {
+        textDecoration: 'none',
+    },
 });
 
 export default function ImageCard({ data, checked }) {
@@ -67,7 +70,7 @@ export default function ImageCard({ data, checked }) {
                 </CardActionArea>
                 <CardActions>
                     <Button size='small' color='primary' className={classes.cardLink}>
-                        <Link href={data.link} target={data.target}>
+                        <Link href={data.link} target={data.target} underline='none'>
                             Direktlänk
                         </Link>
                     </Button>
